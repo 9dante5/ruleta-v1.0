@@ -42,7 +42,7 @@ export function crearRuleta(form) {
             localStorage.setItem("Ruletas", JSON.stringify(ruletas));
             localStorage.setItem("InfoRuletas", JSON.stringify(infoRuletas));
             localStorage.setItem("RuletaSeleccionada", JSON.stringify(datosNuevaRuleta))
-            location.href = "../../pages/ruleta.html";
+            location.href = "ruleta.html";
         }
 
         form.reset()
