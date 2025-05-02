@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/ruleta.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Ruleta</title>
+</head>
+
+<body>
+    <main id="containerMainRuleta">
+        <h1 id="tituloRuleta"></h1>
+
+        <div id="conainerAgregarDatos">
+            <div id="datosEliminados" data-bs-toggle="modal" data-bs-target="#modalDatosEliminados">
+                <i class='bx bxs-notepad'></i>
+            </div>
+            <form id="formAgregarDatos">
+                <input id="inputAgregarDatos" type="text" placeholder="Nuevo dato" autocomplete="off" required>
+                <button type="submit">Agregar dato</button>
+            </form>
+        </div>
+
+        <div id="containerRuleta">
+            <button type="button" id="botonRuleta" class="clsBotonRuleta">Empezar ruleta</button>
+            <div id="containerDatos"></div>
+            <div id="containerGanador"></div>
+        </div>
+    </main>
+
+    <footer id="containerFooter">
+        <div>
+            <img src="../assets/logovectorizadomioblanco.svg" alt="">
+        </div>
+        <h4><a href="https://www.linkedin.com/in/andres-elias-polo-bermudez-79777541/" target="_blank">&copy Andres Elias Polo Bermudez</a></h4>
+    </footer>
+
+    <div class="modal fade" id="modalDatosEliminados" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="modalDatosEliminadosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" id="modalContent">
+                <div class="modal-header" id="modalHeader">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Informacion de todas las ruletas</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table id="containerDatosEliminados">
+                        <tr>
+                            <th>#</th>
+                            <th>Dato eliminado</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../js/ruleta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
