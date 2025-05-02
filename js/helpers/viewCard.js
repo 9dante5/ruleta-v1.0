@@ -35,6 +35,7 @@ export function crearCardRuletas(container) {
             element.addEventListener("click", (e) => {
                 let idRuleta = e.target.parentElement.parentElement.parentElement.id
                 let ruletaBuscada = ruletas.find((element) => element.id == idRuleta)
+                console.log(ruletaBuscada)
                 localStorage.setItem("RuletaSeleccionada", JSON.stringify(ruletaBuscada))
                 location.href = "ruleta.html";
             })
