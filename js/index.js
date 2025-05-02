@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerInfoRuletas = document.getElementById("containerInfoRuletas")
 
     // eliminar la ruleta seleccionada del localStorage
+    location.reload()
     localStorage.removeItem("RuletaSeleccionada");
 
 
