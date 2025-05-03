@@ -49,7 +49,29 @@ export function crearCardRuletas(container) {
                     denyButtonText: `No eliminar`
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        Swal.fire("Ruleta eliminada exitosamente");
+
+                        let timerInterval;
+                        Swal.fire({
+                            title: "Eliminando ruleta",
+                            html: "La ruleta se eliminara en <b></b> milisegundos.",
+                            timer: 5000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                                Swal.showLoading();
+                                const timer = Swal.getPopup().querySelector("b");
+                                timerInterval = setInterval(() => {
+                                    timer.textContent = `${Math.ceil(Swal.getTimerLeft() / 1000)}`;
+                                }, 100);
+                            },
+                            willClose: () => {
+                                clearInterval(timerInterval);
+                            }
+                        }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                            }
+                        });
+
                         let idRuleta = e.target.parentElement.parentElement.parentElement.id
                         let ruletaBuscada = ruletas.find((element) => element.id == idRuleta)
                         let infoRuletaBuscada = info.find((element) => element.nombreRuleta == ruletaBuscada.nombreRuleta)
@@ -69,7 +91,10 @@ export function crearCardRuletas(container) {
 
                         localStorage.setItem("Ruletas", JSON.stringify(nuevaListaRuletas));
                         localStorage.setItem("InfoRuletas", JSON.stringify(nuevaListaInfoRuletas));
-                        location.reload();
+                        setTimeout(() => {
+                            location.reload();
+                        }, 5000);
+
 
                     } else if (result.isDenied) {
                         Swal.fire("No se completo la eliminación de la ruleta");
