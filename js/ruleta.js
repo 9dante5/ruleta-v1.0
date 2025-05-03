@@ -12,9 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const containerGanador = document.getElementById("containerGanador")
     const containerDatosEliminados = document.getElementById("containerDatosEliminados")
     const inputAgregarDatos = document.getElementById("inputAgregarDatos")
+    const irHome = document.getElementById("irHome")
 
-    let ruletas = JSON.parse(localStorage.getItem("Ruletas")) || [];
     let ruletaSeleccionada = JSON.parse(localStorage.getItem("RuletaSeleccionada")) || [];
+    irHome.addEventListener("click", () => {
+        location.href = "index.html"
+    })
 
     tituloRuleta.textContent = "Ruleta: " + ruletaSeleccionada.nombreRuleta
 
